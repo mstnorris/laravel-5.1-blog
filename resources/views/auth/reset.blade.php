@@ -2,33 +2,28 @@
 
 @section('content')
 
-    <!-- resources/views/auth/register.blade.php -->
+    <!-- resources/views/auth/reset.blade.php -->
 
-<form method="POST" action="/auth/register">
+<form method="POST" action="/password/reset">
     {!! csrf_field() !!}
-
-    <div class="col-md-6">
-        Name
-        <input type="text" name="name" value="{{ old('name') }}">
-    </div>
+    <input type="hidden" name="token" value="{{ $token }}">
 
     <div>
-        Email
         <input type="email" name="email" value="{{ old('email') }}">
     </div>
 
     <div>
-        Password
         <input type="password" name="password">
     </div>
 
-    <div class="col-md-6">
-        Confirm Password
+    <div>
         <input type="password" name="password_confirmation">
     </div>
 
     <div>
-        <button type="submit">Register</button>
+        <button type="submit">
+            Reset Password
+        </button>
     </div>
 </form>
 

@@ -6,6 +6,7 @@ elixir(function(mix) {
 
     mix.styles([
         'sass-output.css',
+        'sticky-footer.css',
         'style.css'
     ]);
 
