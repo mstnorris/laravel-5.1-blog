@@ -36,7 +36,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function isAdmin()
     {
-        return false;
+        return true;
     }
 
     public function roles()
@@ -52,6 +52,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function revokeRole($role)
     {
         return $this->roles()->detach($role);
+    }
+
+    public function isAn($roleName)
+    {
+        return $this->isA($roleName);
     }
 
     public function isA($roleName)

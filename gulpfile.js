@@ -15,6 +15,7 @@ elixir(function(mix) {
     mix.scripts([
         "../../../node_modules/jquery/dist/jquery.js",
         "../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
+        "../../../node_modules/select2/dist/js/select2.js",
         "app.js"
     ]);
 

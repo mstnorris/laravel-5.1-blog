@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,9 @@ class UMSController extends Controller
 
     public function getAddUser()
     {
-        return view('users.add-user');
+        $roles = Role::lists('name', 'id')->all();
+
+        return view('users.add-user', compact('roles'));
     }
 
     public function getAllRoles()

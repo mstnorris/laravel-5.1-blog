@@ -9,6 +9,16 @@
 
                 <p class="lead">Welcome {{ auth()->user()->name }}</p>
 
+                @foreach ( $user->roles as $role )
+
+                    @foreach ( $role->permissions as $permission )
+
+                        <p>{{ $permission->name }}</p>
+
+                    @endforeach
+
+                @endforeach
+
             </div>
         </div>
     </div>

@@ -16,11 +16,19 @@ class UsersController extends Controller
 
     public function getMyRoles()
     {
-        return view('users.my-roles');
+        $user = auth()->user();
+
+        $user->load('roles');
+
+        return view('users.my-roles', compact('user'));
     }
 
     public function getMyPermissions()
     {
-        return view('users.my-permissions');
+        $user = auth()->user();
+
+        $user->load('roles.permissions');
+
+        return view('users.my-permissions', compact('user'));
     }
 }

@@ -77,7 +77,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Super Administrator (Permission)
         $superP = Permission::create([
-            'name'       => 'Super Administrator',
+            'name'       => 'Super Administrator (Permission)',
             'level'      => '1000',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -85,7 +85,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Administrator (Permission)
         $adminP = Permission::create([
-            'name'       => 'Administrator',
+            'name'       => 'Administrator (Permission)',
             'level'      => '500',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -93,7 +93,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 200 (Permission)
         $p200 = Permission::create([
-            'name'       => 'Level 200',
+            'name'       => 'Level 200 (Permission)',
             'level'      => '200',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -101,7 +101,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 100 (Permission)
         $p100 = Permission::create([
-            'name'       => 'Level 100',
+            'name'       => 'Level 100 (Permission)',
             'level'      => '100',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -109,7 +109,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 50 (Permission)
         Permission::create([
-            'name'       => 'Level 50',
+            'name'       => 'Level 50 (Permission)',
             'level'      => '50',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -117,7 +117,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 20 (Permission)
         Permission::create([
-            'name'       => 'Level 20',
+            'name'       => 'Level 20 (Permission)',
             'level'      => '20',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -125,7 +125,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 10 (Permission)
         Permission::create([
-            'name'       => 'Level 10',
+            'name'       => 'Level 10 (Permission)',
             'level'      => '10',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -133,7 +133,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 5 (Permission)
         Permission::create([
-            'name'       => 'Level 5',
+            'name'       => 'Level 5 (Permission)',
             'level'      => '5',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -141,7 +141,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 2 (Permission)
         Permission::create([
-            'name'       => 'Level 2',
+            'name'       => 'Level 2 (Permission)',
             'level'      => '2',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -149,7 +149,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 1 (Permission)
         Permission::create([
-            'name'       => 'Level 1',
+            'name'       => 'Level 1 (Permission)',
             'level'      => '1',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -157,7 +157,7 @@ class ConstantsTableSeeder extends Seeder
 
         // Level 0 (Permission)
         Permission::create([
-            'name'       => 'Level 0',
+            'name'       => 'Level 0 (Permission)',
             'level'      => '0',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
