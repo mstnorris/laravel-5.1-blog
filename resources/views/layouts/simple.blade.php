@@ -11,13 +11,7 @@
 </head>
 <body>
 
-@include('layouts.partials._header')
-
-@include('layouts.partials._navigation')
-
 @yield('content')
-
-@include('layouts.partials._footer')
 
 <script src="{{ elixir('js/all.js') }}"></script>
 

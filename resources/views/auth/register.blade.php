@@ -1,35 +1,53 @@
 @extends('layouts.master')
 
 @section('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
-    <!-- resources/views/auth/register.blade.php -->
+                <h1>Register</h1>
 
-<form method="POST" action="/auth/register">
-    {!! csrf_field() !!}
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
-    <div class="col-md-6">
-        Name
-        <input type="text" name="name" value="{{ old('name') }}">
+                <form role="form" method="POST" action="{{ url('/register') }}">
+                    {!! csrf_field() !!}
+
+                    <div class="form-group">
+                        <label class="control-label">Name</label>
+                        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">E-Mail Address</label>
+                        <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Confirm Password</label>
+                        <input type="password" class="form-control" name="password_confirmation">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
-
-    <div>
-        Password
-        <input type="password" name="password">
-    </div>
-
-    <div class="col-md-6">
-        Confirm Password
-        <input type="password" name="password_confirmation">
-    </div>
-
-    <div>
-        <button type="submit">Register</button>
-    </div>
-</form>
-
 @endsection

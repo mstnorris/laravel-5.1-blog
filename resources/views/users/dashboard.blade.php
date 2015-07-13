@@ -1,9 +1,15 @@
-<footer class="footer">
+@extends('layouts.master')
+
+@section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <p class="text-muted">Copyright &copy; {{ date('Y') }} Michael Norris. All rights reserved.</p>
+
+                <h1>Dashboard</h1>
+
+                <p class="lead">Welcome {{ auth()->user()->name }}</p>
+
             </div>
         </div>
     </div>
-</footer>
+@endsection

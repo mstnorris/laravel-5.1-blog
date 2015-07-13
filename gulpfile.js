@@ -2,6 +2,8 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
 
+    mix.copy('node_modules/font-awesome/fonts', 'public/build/fonts/');
+
     mix.sass('app.scss', 'resources/assets/css/sass-output.css');
 
     mix.styles([
@@ -11,6 +13,8 @@ elixir(function(mix) {
     ]);
 
     mix.scripts([
+        "../../../node_modules/jquery/dist/jquery.js",
+        "../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
         "app.js"
     ]);
 
