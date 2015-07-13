@@ -11,11 +11,21 @@ class UMSController extends Controller
 {
     public function getAllUsers()
     {
-        return view('users.index');
+        return view('users.all-users');
     }
 
     public function getAddUser()
     {
-        return view('users.create');
+        return view('users.add-user');
+    }
+
+    public function getAllRoles()
+    {
+        return view('users.all-roles');
+    }
+
+    public function getAllPermissions()
+    {
+        return view('users.all-roles');
     }
 }

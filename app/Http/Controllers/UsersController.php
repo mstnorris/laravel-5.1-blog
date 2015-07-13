@@ -13,4 +13,14 @@ class UsersController extends Controller
     {
         return view('users.dashboard');
     }
+
+    public function getMyRoles()
+    {
+        return view('users.my-roles');
+    }
+
+    public function getMyPermissions()
+    {
+        return view('users.my-permissions');
+    }
 }

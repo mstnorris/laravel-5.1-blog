@@ -18,12 +18,15 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="{{ set_active('dashboard') }}"><a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard<span class="sr-only">(current)</span></a></li>
-                        @if ( auth()->check() && auth()->user()->canAddUsers() )
+                        @if ( auth()->check() && auth()->user()->isAdmin() )
                         <li class="{{ set_active('users/add') }}"><a href="/users/add"><i class="fa fa-fw fa-user-plus"></i> Add User</a></li>
+                        <li class="{{ set_active('users') }}"><a href="/users"><i class="fa fa-fw fa-users"></i> All Users</a></li>
+                        <li class="{{ set_active('users/roles') }}"><a href="/users/roles"><i class="fa fa-fw fa-shield"></i> All Roles</a></li>
+                        <li class="{{ set_active('users/permissions') }}"><a href="/users/permissions"><i class="fa fa-fw fa-unlock"></i> All Permissions</a></li>
+                        @else
+                        <li class="{{ set_active('roles') }}"><a href="/roles"><i class="fa fa-fw fa-shield"></i> My Roles</a></li>
+                        <li class="{{ set_active('permissions') }}"><a href="/permissions"><i class="fa fa-fw fa-unlock"></i> My Permissions</a></li>
                         @endif
-                        <li class="{{ set_active('users') }}"><a href="/users"><i class="fa fa-fw fa-users"></i> Users</a></li>
-                        <li class="{{ set_active('roles') }}"><a href="/roles"><i class="fa fa-fw fa-shield"></i> Roles</a></li>
-                        <li class="{{ set_active('permissions') }}"><a href="/permissions"><i class="fa fa-fw fa-unlock"></i> Permissions</a></li>
                         {{--<li class="dropdown">--}}
                             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"--}}
                                {{--aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>--}}
