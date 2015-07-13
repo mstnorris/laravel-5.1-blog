@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', function () {
+Route::get('/', ['middleware' => 'guest', function () {
     return view('welcome');
-});
+}]);
 
 Route::get('dashboard', ['as' => 'dashboard_path', 'uses' => 'UsersController@getDashboard', 'middleware' => ['auth']]);
 Route::get('roles', ['as' => 'my_roles_path', 'uses' => 'UsersController@getMyRoles', 'middleware' => ['auth']]);

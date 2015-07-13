@@ -11,7 +11,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">UMS</a>
+                    @if ( auth()->check() )
+                        <a class="navbar-brand" href="/dashboard">UMS</a>
+                    @else
+                        <a class="navbar-brand" href="/">UMS</a>
+                    @endif
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
