@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -36,5 +37,60 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function isAdmin()
     {
         return false;
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function assignRole($role)
+    {
+        return $this->roles()->attach($role);
+    }
+
+    public function revokeRole($role)
+    {
+        return $this->roles()->detach($role);
+    }
+
+    public function isA($roleName)
+    {
+        foreach ($this->roles()->get() as $role)
+        {
+            if ($role->name == $roleName)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function isVerified()
+    {
+        if ($this->verified_on && $this->verified_on <= Carbon::now()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isActive()
+    {
+        if ($this->active_on && $this->active_on <= Carbon::now()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isBlocked()
+    {
+        if ( $this->blocked_on && Carbon::now() >= $this->blocked_on ) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

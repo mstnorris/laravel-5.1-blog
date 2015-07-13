@@ -1,0 +1,187 @@
+<?php
+
+use Carbon\Carbon;
+use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
+
+use App\Permission;
+use App\Role;
+use App\User;
+
+class ConstantsTableSeeder extends Seeder
+{
+    public function run()
+    {
+
+        $faker = Faker::create('en_US');
+
+        /*
+         * Base User Accounts
+         */
+
+        // Mike's account
+        $michael = User::create([
+            'name'       => 'Michael Norris',
+            'email'      => 'mstnorris@gmail.com',
+            'password'   => bcrypt('password'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Super Administrator (User)
+        $superU = User::create([
+            'name'       => 'Super Administrator',
+            'email'      => 'super@laravel-ums.dev',
+            'password'   => bcrypt('password'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Administrator (User)
+        $adminU = User::create([
+            'name'       => 'Administrator',
+            'email'      => 'admin@laravel-ums.dev',
+            'password'   => bcrypt('password'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
+         * Roles
+         */
+
+        // Super Administrator (Role)
+        $superR = Role::create([
+            'name'       => 'Super Administrator',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Administrator (Role)
+        $adminR = Role::create([
+            'name'       => 'Administrator',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // User (Role)
+        $basicUserR = Role::create([
+            'name'      => 'Basic User',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
+         * Permissions
+         */
+
+        // Super Administrator (Permission)
+        $superP = Permission::create([
+            'name'       => 'Super Administrator',
+            'level'      => '1000',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Administrator (Permission)
+        $adminP = Permission::create([
+            'name'       => 'Administrator',
+            'level'      => '500',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 200 (Permission)
+        $p200 = Permission::create([
+            'name'       => 'Level 200',
+            'level'      => '200',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 100 (Permission)
+        $p100 = Permission::create([
+            'name'       => 'Level 100',
+            'level'      => '100',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 50 (Permission)
+        Permission::create([
+            'name'       => 'Level 50',
+            'level'      => '50',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 20 (Permission)
+        Permission::create([
+            'name'       => 'Level 20',
+            'level'      => '20',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 10 (Permission)
+        Permission::create([
+            'name'       => 'Level 10',
+            'level'      => '10',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 5 (Permission)
+        Permission::create([
+            'name'       => 'Level 5',
+            'level'      => '5',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 2 (Permission)
+        Permission::create([
+            'name'       => 'Level 2',
+            'level'      => '2',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 1 (Permission)
+        Permission::create([
+            'name'       => 'Level 1',
+            'level'      => '1',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Level 0 (Permission)
+        Permission::create([
+            'name'       => 'Level 0',
+            'level'      => '0',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        /*
+         * Detailed User Accounts with Roles and Permissions
+         */
+
+        $superU->roles()->attach($superR);
+
+        $adminU->roles()->attach($adminR);
+
+        $superR->permissions()->attach($superP);
+
+        $adminR->permissions()->attach($adminP);
+
+        $michael->roles()->attach($superR);
+
+        factory(User::class, 50)
+            ->create()
+            ->each(function($u) use ($basicUserR) {
+                $u->roles()->attach($basicUserR);
+            });
+
+    }
+}
