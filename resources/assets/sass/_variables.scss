@@ -1,19 +1,23 @@
 $body-bg: material-color('blue-grey', '50');
 $text-color: material-color('blue-grey');
-$navbar-default-bg: material-color('blue-grey', '500');
-$navbar-default-color: material-color('blue-grey', '100');
-$navbar-default-link-color: material-color('blue-grey', '100');
-$navbar-default-brand-hover-color: material-color('deep-orange');
+
+$navbar-default-bg: material-color('blue-grey');
+$navbar-default-color: material-color('blue-grey', '50');
+$navbar-default-link-color: material-color('blue-grey', '50');
+$navbar-default-brand-hover-color: material-color('blue-grey', '50');
+$navbar-default-border:none;
 $navbar-default-link-hover-color: material-color('blue-grey', '50');
 $navbar-default-link-hover-bg: material-color('blue-grey', '600');
-$navbar-default-brand-color: material-color('blue-grey', '100');
+$navbar-default-brand-color: material-color('blue-grey', '50');
 $navbar-default-link-active-color: material-color('blue-grey', '50');
 $navbar-default-link-active-bg: material-color('blue-grey', '600');
+
 $btn-primary-color: material-color('orange', '50');
 $btn-primary-bg: material-color('deep-orange');
 $btn-primary-border: material-color('deep-orange', '400');
 $btn-primary-color: material-color('orange', '50');
 $link-color: $text-color;
+
 $dropdown-bg: material-color('blue-grey', '500');
 //== Dropdowns
 //

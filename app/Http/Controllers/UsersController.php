@@ -13,9 +13,4 @@ class UsersController extends Controller
     {
         return view('users.dashboard');
     }
-
-    public function getAddUser()
-    {
-        return view('users.create');
-    }
 }
