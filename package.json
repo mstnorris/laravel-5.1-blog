@@ -5,7 +5,14 @@
     "sass-material-colors": "0.0.5"
   },
   "dependencies": {
+    "bootstrap": "^3.3.5",
+    "bootstrap-sass": "^3.3.5",
+    "font-awesome": "^4.3.0",
+    "jquery": "^2.1.4",
     "laravel-elixir": "^2.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "sass-material-colors": "0.0.5",
+    "select2": "^4.0.0",
+    "select2-bootstrap-css": "^1.4.6",
+    "sweetalert": "^1.0.1"
   }
 }
