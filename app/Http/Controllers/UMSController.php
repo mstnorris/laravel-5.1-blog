@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Permission;
 use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,7 +14,9 @@ class UMSController extends Controller
 {
     public function getAllUsers()
     {
-        return view('users.all-users');
+        $users = User::paginate(15);
+
+        return view('users.all-users', compact('users'));
     }
 
     public function getAddUser()
@@ -24,11 +28,15 @@ class UMSController extends Controller
 
     public function getAllRoles()
     {
-        return view('users.all-roles');
+        $roles = Role::all();
+
+        return view('users.all-roles', compact('roles'));
     }
 
     public function getAllPermissions()
     {
-        return view('users.all-roles');
+        $permissions = Permission::all();
+
+        return view('users.all-permissions', compact('permissions'));
     }
 }
