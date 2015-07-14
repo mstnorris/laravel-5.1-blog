@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Alert;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -35,6 +36,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
+            Alert::message("You're already logged in!");
             return redirect('/dashboard');
         }
 

@@ -21,9 +21,11 @@ class UMSController extends Controller
 
     public function getAddUser()
     {
+        $users = User::latest()->take(3)->get();
+
         $roles = Role::lists('name', 'id')->all();
 
-        return view('users.add-user', compact('roles'));
+        return view('users.add-user', compact('users', 'roles'));
     }
 
     public function getAllRoles()

@@ -21,6 +21,8 @@
 
 <script src="{{ elixir('js/all.js') }}"></script>
 
+@include('layouts.partials.alert')
+
 @yield('footer')
 
 </body>

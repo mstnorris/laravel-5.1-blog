@@ -55,3 +55,13 @@
         </div>
     </div>
 @endsection
+
+@section('footer')
+    <script>swal({
+            title: "Error!",
+            text: "Here's my error message!",
+            type: "success",
+            confirmButtonText: "Cool",
+            allowOutsideClick: true
+        });</script>
+@endsection
