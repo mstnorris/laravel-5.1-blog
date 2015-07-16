@@ -44,6 +44,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsToMany(Role::class)->withTimestamps();
     }
 
+    public function permissions()
+    {
+        $permissions = null;
+
+        foreach ( $this->roles as $role ) {
+            $permissions = $role->permissions();
+        }
+
+        return $permissions;
+
+    }
+
     public function assignRole($role)
     {
         return $this->roles()->attach($role);

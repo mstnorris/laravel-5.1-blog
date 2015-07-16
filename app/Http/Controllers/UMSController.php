@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\Permission;
 use App\Role;
 use App\User;
@@ -17,6 +18,15 @@ class UMSController extends Controller
         $users = User::paginate(15);
 
         return view('users.all-users', compact('users'));
+    }
+
+    public function getIndividualUser($id)
+    {
+        $user = User::find($id);
+
+        Alert::success('We found one!');
+
+        return view('users.individual-user', compact('user'));
     }
 
     public function getAddUser()

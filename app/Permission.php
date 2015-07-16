@@ -34,4 +34,16 @@ class Permission extends Model
     {
         return $this->belongsToMany(Role::class);
     }
+
+    public function can($name)
+    {
+        foreach ($this->roles as $role) {
+            foreach ($role->permissions as $permission) {
+                if ($permission->name == $name || $permission->slug == $name) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

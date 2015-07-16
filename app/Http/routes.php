@@ -12,6 +12,7 @@ Route::get('users', ['as' => 'all_users_path', 'uses' => 'UMSController@getAllUs
 Route::get('users/add', ['as' => 'add_user_path', 'uses' => 'UMSController@getAddUser', 'middleware' => ['auth', 'admin']]);
 Route::get('users/roles', ['as' => 'all_roles_path', 'uses' => 'UMSController@getAllRoles', 'middleware' => ['auth', 'admin']]);
 Route::get('users/permissions', ['as' => 'all_permissions_path', 'uses' => 'UMSController@getAllPermissions', 'middleware' => ['auth', 'admin']]);
+Route::get('users/{id}', ['as' => 'individual_user_path', 'uses' => 'UMSController@getIndividualUser', 'middleware' => ['auth', 'admin']]);
 
 
 // Authentication routes...

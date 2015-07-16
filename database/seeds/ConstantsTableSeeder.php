@@ -18,11 +18,28 @@ class ConstantsTableSeeder extends Seeder
         /*
          * Base User Accounts
          */
-
         // Mike's account
         $michael = User::create([
             'name'       => 'Michael Norris',
             'email'      => 'mstnorris@gmail.com',
+            'password'   => bcrypt('password'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Sezer's account
+        $sezer = User::create([
+            'name'       => 'Sezer Tunca',
+            'email'      => 'sezertunca@gmail.com',
+            'password'   => bcrypt('password'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Holly's account
+        $holly = User::create([
+            'name'       => 'Holly McNicol',
+            'email'      => 'holly.mcnicol@live.co.uk',
             'password'   => bcrypt('password'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -49,7 +66,6 @@ class ConstantsTableSeeder extends Seeder
         /*
          * Roles
          */
-
         // Super Administrator (Role)
         $superR = Role::create([
             'name'       => 'Super Administrator',
@@ -159,6 +175,14 @@ class ConstantsTableSeeder extends Seeder
         Permission::create([
             'name'       => 'Level 0 (Permission)',
             'level'      => '0',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        // Can create a new Article
+        Permission::create([
+            'name'       => 'create an article',
+            'level'      => '10',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
