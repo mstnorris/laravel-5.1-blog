@@ -37,7 +37,7 @@ class RedirectIfAuthenticated
     {
         if ($this->auth->check()) {
             Alert::message("You're already logged in!");
-            return redirect('/dashboard');
+            return redirect('/blog');
         }
 
         return $next($request);

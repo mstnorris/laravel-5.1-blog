@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
-                <h1>Register</h1>
+                <h1>Sign up</h1>
 
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -43,7 +43,7 @@
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
-                            Register
+                            Sign up
                         </button>
                     </div>
                 </form>

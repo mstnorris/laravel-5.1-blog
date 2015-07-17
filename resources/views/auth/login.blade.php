@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
-                <h1>Login</h1>
+                <h1>Sign in</h1>
 
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
 
                             <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
                     </div>

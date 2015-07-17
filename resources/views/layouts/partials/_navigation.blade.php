@@ -12,9 +12,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     @if ( auth()->check() )
-                        <a class="navbar-brand" href="/dashboard">UMS</a>
+                        <a class="navbar-brand" href="/blog">Blog</a>
                     @else
-                        <a class="navbar-brand" href="/">UMS</a>
+                        <a class="navbar-brand" href="/">Blog</a>
                     @endif
                 </div>
 
@@ -23,21 +23,8 @@
                     <ul class="nav navbar-nav">
                         @if ( auth()->check() )
 
-                            <li class="{{ set_active('dashboard') }}"><a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard<span class="sr-only">(current)</span></a></li>
-
-                            @if ( auth()->user()->isAdmin() )
-
-                                <li class="{{ set_active('users/add') }}"><a href="/users/add"><i class="fa fa-fw fa-user-plus"></i> Add User</a></li>
-                                <li class="{{ set_active('users') }}"><a href="/users"><i class="fa fa-fw fa-users"></i> All Users</a></li>
-                                <li class="{{ set_active('users/roles') }}"><a href="/users/roles"><i class="fa fa-fw fa-shield"></i> All Roles</a></li>
-                                <li class="{{ set_active('users/permissions') }}"><a href="/users/permissions"><i class="fa fa-fw fa-unlock"></i> All Permissions</a></li>
-
-                            @else
-
-                                <li class="{{ set_active('roles') }}"><a href="/roles"><i class="fa fa-fw fa-shield"></i> My Roles</a></li>
-                                <li class="{{ set_active('permissions') }}"><a href="/permissions"><i class="fa fa-fw fa-unlock"></i> My Permissions</a></li>
-
-                            @endif
+                            <li class="{{ set_active('dashboard') }}"><a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
+                            <li class="{{ set_active('articles/write') }}"><a href="/write"><i class="fa fa-fw fa-pencil-square-o"></i> New Article</a></li>
 
                         @endif
                     </ul>
@@ -48,8 +35,7 @@
                                    aria-haspopup="true" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-                                    <li><a href="/roles"><i class="fa fa-fw fa-shield"></i> My Roles</a></li>
-                                    <li><a href="/permissions"><i class="fa fa-fw fa-unlock"></i> My Permissions</a></li>
+                                    <li><a href="/my-articles"><i class="fa fa-fw fa-newspaper-o"></i> My Articles</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="/logout"><i class="fa fa-fw fa-sign-out"></i> Sign out</a></li>
                                 </ul>

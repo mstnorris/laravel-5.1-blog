@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title', 'User Management System')</title>
+    <title>@yield('title', 'Blog')</title>
 
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
