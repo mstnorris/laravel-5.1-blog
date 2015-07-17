@@ -110,4 +110,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             return false;
         }
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

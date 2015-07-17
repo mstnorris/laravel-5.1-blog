@@ -1,5 +1,6 @@
 <?php
 
+use App\Article;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
@@ -206,6 +207,8 @@ class ConstantsTableSeeder extends Seeder
             ->each(function($u) use ($basicUserR) {
                 $u->roles()->attach($basicUserR);
             });
+
+        factory(Article::class, 50)->create();
 
     }
 }
