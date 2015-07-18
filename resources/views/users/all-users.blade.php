@@ -6,7 +6,7 @@
 
         .card {
             padding-top: 20px;
-            margin: 10px 0 20px 0;
+            margin: 40px 20px 20px;
             background-color: rgba(214, 224, 226, 0.2);
             border-top-width: 0;
             border-bottom-width: 2px;
