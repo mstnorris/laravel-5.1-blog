@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         'password_resets',
         'permission_role',
         'permissions',
+        'profiles',
         'role_user',
         'roles',
         'users'

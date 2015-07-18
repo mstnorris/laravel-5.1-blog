@@ -1,6 +1,7 @@
 <?php
 
 use App\Article;
+use App\Profile;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
@@ -11,6 +12,9 @@ use App\User;
 
 class ConstantsTableSeeder extends Seeder
 {
+    /**
+     *
+     */
     public function run()
     {
 
@@ -28,6 +32,15 @@ class ConstantsTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
 
+        $michaelProfile = Profile::create([
+            'user_id' => $michael->id,
+            'facebook_username' => 'mstnorris',
+            'twitter_username' => 'mstnorris',
+            'instagram_username' => 'mstnorris'
+        ]);
+
+        $michael->profile()->save($michaelProfile);
+
         // Sezer's account
         $sezer = User::create([
             'name'       => 'Sezer Tunca',
@@ -36,6 +49,15 @@ class ConstantsTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+
+        $sezerProfile = Profile::create([
+            'user_id' => $sezer->id,
+            'facebook_username' => 'sezertunca',
+            'twitter_username' => 'sezertunca',
+            'instagram_username' => 'sezertunca'
+        ]);
+
+        $sezer->profile()->save($sezerProfile);
 
         // Holly's account
         $holly = User::create([
@@ -46,6 +68,15 @@ class ConstantsTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
 
+        $hollyProfile = Profile::create([
+            'user_id' => $holly->id,
+            'facebook_username' => 'hjm',
+            'twitter_username' => 'hjm',
+            'instagram_username' => 'hjm'
+        ]);
+
+        $holly->profile()->save($hollyProfile);
+
         // Super Administrator (User)
         $superU = User::create([
             'name'       => 'Super Administrator',
@@ -55,6 +86,15 @@ class ConstantsTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
 
+        $superUProfile = Profile::create([
+            'user_id' => $superU->id,
+            'facebook_username' => 'superadmin',
+            'twitter_username' => 'superadmin',
+            'instagram_username' => 'superadmin'
+        ]);
+
+        $superU->profile()->save($superUProfile);
+
         // Administrator (User)
         $adminU = User::create([
             'name'       => 'Administrator',
@@ -63,6 +103,15 @@ class ConstantsTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+
+        $adminUProfile = Profile::create([
+            'user_id' => $adminU->id,
+            'facebook_username' => 'admin',
+            'twitter_username' => 'admin',
+            'instagram_username' => 'admin'
+        ]);
+
+        $adminU->profile()->save($adminUProfile);
 
         /*
          * Roles
@@ -206,7 +255,9 @@ class ConstantsTableSeeder extends Seeder
             ->create()
             ->each(function($u) use ($basicUserR) {
                 $u->roles()->attach($basicUserR);
-            });
+                $u->profile()->save(factory(Profile::class)->create());
+        });
+
 
         factory(Article::class, 50)->create();
 

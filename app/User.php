@@ -49,7 +49,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         $permissions = null;
 
         foreach ( $this->roles as $role ) {
-            $permissions = $role->permissions();
+            $permissions = $role->permissions;
         }
 
         return $permissions;
@@ -114,5 +114,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function articles()
     {
         return $this->hasMany(Article::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 }

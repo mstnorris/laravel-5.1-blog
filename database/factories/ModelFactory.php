@@ -20,6 +20,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Profile::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'facebook_username' => $faker->word,
+        'twitter_username' => $faker->word,
+        'instagram_username' => $faker->word
+    ];
+});
+
 $factory->define(App\Article::class, function (Faker\Generator $faker) {
     return [
         'user_id' => $faker->numberBetween(1,50),

@@ -20,15 +20,6 @@ class UMSController extends Controller
         return view('users.all-users', compact('users'));
     }
 
-    public function getIndividualUser($id)
-    {
-        $user = User::find($id);
-
-        Alert::success('We found one!');
-
-        return view('users.individual-user', compact('user'));
-    }
-
     public function getAddUser()
     {
         $users = User::latest()->take(3)->get();

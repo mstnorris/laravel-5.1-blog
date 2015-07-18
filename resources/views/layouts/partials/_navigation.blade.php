@@ -23,7 +23,7 @@
                     <ul class="nav navbar-nav">
                         @if ( auth()->check() )
 
-                            <li class="{{ set_active('dashboard') }}"><a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
+                            <li class="{{ set_active('/{id}') }}"><a href="/{{ auth()->user()->id }}"><i class="fa fa-fw fa-home"></i> Home</a></li>
                             <li class="{{ set_active('articles/write') }}"><a href="/write"><i class="fa fa-fw fa-pencil-square-o"></i> New Article</a></li>
 
                         @endif
@@ -32,7 +32,7 @@
                         @if ( auth()->check() )
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
+                                   aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-user"></i> {{ auth()->user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
                                     <li><a href="/my-articles"><i class="fa fa-fw fa-newspaper-o"></i> My Articles</a></li>

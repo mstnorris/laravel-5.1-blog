@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,21 +15,12 @@ class UsersController extends Controller
         return view('users.dashboard');
     }
 
-    public function getMyRoles()
+    public function getIndividualUserArticles($id)
     {
-        $user = auth()->user();
+        $user = User::findOrFail($id);
 
-        $user->load('roles');
+        $user->load('articles');
 
-        return view('users.my-roles', compact('user'));
-    }
-
-    public function getMyPermissions()
-    {
-        $user = auth()->user();
-
-        $user->load('roles.permissions');
-
-        return view('users.my-permissions', compact('user'));
+        return view('users.individual-user', compact('user'));
     }
 }

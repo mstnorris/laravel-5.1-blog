@@ -33,6 +33,14 @@
         }
     </style>
 @endsection
+
+@section('header')
+    <style>
+        textarea.markdown-editor {
+            padding: 10px;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -47,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                        <textarea name="body" class="form-control" data-provide="markdown" data-iconLibrary="fa" rows="10" placeholder="Give it a Body..."></textarea>
+                        <textarea name="body" class="form-control markdown-editor" data-provide="markdown" data-iconLibrary="fa" rows="10" placeholder="Give it a Body..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="published_at">Publish on</label>
