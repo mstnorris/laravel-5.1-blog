@@ -8,19 +8,22 @@
     {!! csrf_field() !!}
     <input type="hidden" name="token" value="{{ $token }}">
 
-    <div>
-        <input type="email" name="email" value="{{ old('email') }}">
+    <div class="form-group">
+        <label class="control-label">Email</label>
+        <input type="email" class="form-control" name="email" value="{{ old('email') }}">
     </div>
 
-    <div>
-        <input type="password" name="password">
+    <div class="form-group">
+        <label class="control-label">New Password</label>
+        <input type="password" class="form-control" name="password">
     </div>
 
-    <div>
-        <input type="password" name="password_confirmation">
+    <div class="form-group">
+    <label class="control-label">New Password Confirm</label>
+        <input type="password" class="form-control" name="password_confirmation">
     </div>
 
-    <div>
+    <div class="form-group" class="btn btn-primary">
         <button type="submit">
             Reset Password
         </button>
