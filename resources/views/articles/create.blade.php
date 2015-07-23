@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="published_at">Publish on</label>
-                        <input type="date" name="published_at" class="form-control" placeholder="{{ date('Y-m-d') }}">
+                        <input type="date" name="published_at" class="form-control" value="{{ date('Y-m-d') }}">
                     </div>
                     <div class="form-group">
 
