@@ -4,11 +4,13 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Article extends Model
 {
     protected $fillable = [
         'title',
+        'slug',
         'body',
         'published_at'
     ];
@@ -25,6 +27,16 @@ class Article extends Model
     public function setPublishedAtAttribute($date)
     {
         $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
+    }
+
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = ucfirst($value);
+     
+        if( ! $this->slug)
+        {
+            $this->attributes['slug'] = Str::slug($value);
+        }
     }
 
     public function author()

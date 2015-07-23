@@ -8,6 +8,7 @@ Route::get('dashboard', ['as' => 'dashboard_path', 'uses' => 'UsersController@ge
 Route::get('blog', 'ArticlesController@getBlogPosts');
 Route::get('write', ['as' => 'write_article_path', 'uses' => 'ArticlesController@getWriteArticle', 'middleware' => 'auth']);
 Route::post('write', ['as' => 'save_article_path', 'uses' => 'ArticlesController@postSaveArticle', 'middleware' => 'auth']);
+Route::get('{slug}.html', ['as' => 'blog_post_path', 'uses' => 'ArticlesController@getBlogPost', 'middleware' => ['auth']]);
 Route::get('roles', ['as' => 'my_roles_path', 'uses' => 'UsersController@getMyRoles', 'middleware' => ['auth']]);
 Route::get('permissions', ['as' => 'my_permissions_path', 'uses' => 'UsersController@getMyPermissions', 'middleware' => ['auth']]);
 
