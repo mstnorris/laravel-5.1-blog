@@ -50,20 +50,20 @@
                     {!! csrf_field() !!}
                     <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" placeholder="Give it a Title...">
+                    <input tabindex="0" required type="text" class="form-control" name="title" placeholder="Give it a Title...">
 
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                        <textarea name="body" class="form-control markdown-editor" data-provide="markdown" data-iconLibrary="fa" rows="10" placeholder="Give it a Body..."></textarea>
+                        <textarea tabindex="1" required autofocus="autofocus" name="body" class="form-control markdown-editor" data-provide="markdown" data-iconLibrary="fa" rows="10" placeholder="Give it a Body..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="published_at">Publish on</label>
-                        <input type="date" name="published_at" class="form-control" value="{{ date('Y-m-d') }}">
+                        <input tabindex="2" required type="date" name="published_at" class="form-control" value="{{ date('Y-m-d') }}">
                     </div>
                     <div class="form-group">
 
-                            <button type="submit" class="btn btn-primary">Publish</button>
+                            <button tabindex="3" type="submit" class="btn btn-primary">Publish</button>
 
                     </div>
 
