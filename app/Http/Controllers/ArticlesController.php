@@ -15,6 +15,12 @@ class ArticlesController extends Controller
         return view('articles.all', compact('articles'));
     }
 
+    public function getBlogPost($slug)
+    {
+        $article = Article::whereSlug($slug)->first();
+        return view('articles.single', compact('article'));
+    }
+
     public function getWriteArticle()
     {
         return view ('articles.create');

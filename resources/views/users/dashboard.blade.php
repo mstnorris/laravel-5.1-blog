@@ -10,7 +10,7 @@
                 <p class="lead">General information about all users, roles, and permissions.</p>
 
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-users"></i> Users</h3>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-shield"></i> Roles</h3>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-unlock"></i> Permissions</h3>
@@ -49,7 +49,7 @@
                 <p class="lead">Welcome {{ auth()->user()->name }}, here you will find details about your roles and permissions.</p>
 
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-user"></i> User's Details</h3>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-shield"></i> User's Roles</h3>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-unlock"></i> User's Permissions</h3>
